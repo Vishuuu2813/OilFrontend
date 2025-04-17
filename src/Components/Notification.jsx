@@ -13,7 +13,7 @@ function Notification() {
   const fetchNotifications = async () => {
     try {
       setLoading(true);
-      const res = await axios.get('http://localhost:8000/api/notifications');
+      const res = await axios.get('https://oil-backend-maxf.vercel.app/notifications');
 
       if (res.status !== 200) {
         throw new Error(`HTTP error! Status: ${res.status}`);

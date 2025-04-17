@@ -32,7 +32,7 @@ const AdminLogin = () => {
 
     setIsLoading(true);
     try {
-      const response = await fetch("http://localhost:8000/login-admin", {
+      const response = await fetch("https://oil-backend-maxf.vercel.applogin-admin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

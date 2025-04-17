@@ -70,7 +70,7 @@ function Department() {
 
         // Fetch departments
         const departmentsResponse = await axios.get(
-          "http://localhost:8000/departments"
+          "https://oil-backend-maxf.vercel.appdepartments"
         );
 
         if (departmentsResponse.data.status === "success") {
@@ -107,7 +107,7 @@ function Department() {
 
         // Fetch categories
         const categoriesResponse = await axios.get(
-          "http://localhost:8000/categories-with-count"
+          "https://oil-backend-maxf.vercel.appcategories-with-count"
         );
 
         if (categoriesResponse.data.status === "success") {
@@ -139,7 +139,7 @@ function Department() {
       
       const token = localStorage.getItem("token") || sessionStorage.getItem("token");
       
-      const response = await axios.get(`http://localhost:8000/get-wishlist/${userData._id}`, {
+      const response = await axios.get(`https://oil-backend-maxf.vercel.appget-wishlist/${userData._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       
@@ -189,7 +189,7 @@ const handleWishlistToggle = async (itemId, event) => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           // Remove from wishlist
-          await axios.post('http://localhost:8000/remove-from-wishlist', 
+          await axios.post('https://oil-backend-maxf.vercel.appremove-from-wishlist', 
             { userId: userData._id, itemId },
             { headers: { Authorization: `Bearer ${token}` }}
           );
@@ -208,7 +208,7 @@ const handleWishlistToggle = async (itemId, event) => {
       });
     } else {
       // Add to wishlist
-      await axios.post('http://localhost:8000/add-to-wishlist', 
+      await axios.post('https://oil-backend-maxf.vercel.appadd-to-wishlist', 
         { userId: userData._id, itemId },
         { headers: { Authorization: `Bearer ${token}` }}
       );

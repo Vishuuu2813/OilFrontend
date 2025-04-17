@@ -32,7 +32,7 @@ const EmployeeLogin = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/login', {
+      const res = await fetch('https://oil-backend-maxf.vercel.applogin', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

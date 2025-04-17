@@ -25,7 +25,7 @@ const MyShifts = () => {
         setLoading(true);
         
         // Fetch active shifts
-        const activeResponse = await fetch('http://localhost:8000/api/my-shifts/active', {
+        const activeResponse = await fetch('https://oil-backend-maxf.vercel.app/my-shifts/active', {
           headers: {
             'Authorization': localStorage.getItem('token')
           }
@@ -38,7 +38,7 @@ const MyShifts = () => {
         const activeData = await activeResponse.json();
         
         // Fetch upcoming shifts
-        const upcomingResponse = await fetch('http://localhost:8000/api/my-shifts/upcoming', {
+        const upcomingResponse = await fetch('https://oil-backend-maxf.vercel.app/my-shifts/upcoming', {
           headers: {
             'Authorization': localStorage.getItem('token')
           }
@@ -51,7 +51,7 @@ const MyShifts = () => {
         const upcomingData = await upcomingResponse.json();
         
         // Fetch shift history
-        const historyResponse = await fetch('http://localhost:8000/api/my-shifts/history', {
+        const historyResponse = await fetch('https://oil-backend-maxf.vercel.app/my-shifts/history', {
           headers: {
             'Authorization': localStorage.getItem('token')
           }
@@ -128,7 +128,7 @@ const MyShifts = () => {
   // Function to handle pausing a shift
   const handlePauseShift = async (shiftId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/pause-shift/${shiftId}`, {
+      const response = await fetch(`https://oil-backend-maxf.vercel.app/pause-shift/${shiftId}`, {
         method: 'POST',
         headers: {
           'Authorization': localStorage.getItem('token')
@@ -166,7 +166,7 @@ const MyShifts = () => {
   // Function to handle resuming a shift
   const handleResumeShift = async (shiftId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/resume-shift/${shiftId}`, {
+      const response = await fetch(`https://oil-backend-maxf.vercel.app/resume-shift/${shiftId}`, {
         method: 'POST',
         headers: {
           'Authorization': localStorage.getItem('token')
@@ -204,7 +204,7 @@ const MyShifts = () => {
   // Function to handle ending a shift
   const handleEndShift = async (shiftId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/end-shift/${shiftId}`, {
+      const response = await fetch(`https://oil-backend-maxf.vercel.app/end-shift/${shiftId}`, {
         method: 'POST',
         headers: {
           'Authorization': localStorage.getItem('token')
@@ -247,7 +247,7 @@ const MyShifts = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:8000/api/cancel-shift/${shiftId}`, {
+      const response = await fetch(`https://oil-backend-maxf.vercel.app/cancel-shift/${shiftId}`, {
         method: 'POST',
         headers: {
           'Authorization': localStorage.getItem('token')

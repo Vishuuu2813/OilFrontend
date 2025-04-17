@@ -81,7 +81,7 @@ const BookedShifts = () => {
     // In a real app, you would fetch data from API
     // const fetchShifts = async () => {
     //   try {
-    //     const response = await axios.get(`http://localhost:8000/shifts/${departmentId}`);
+    //     const response = await axios.get(`https://oil-backend-maxf.vercel.appshifts/${departmentId}`);
     //     if (response.data.status === 'success') {
     //       setBookedShifts(response.data.data);
     //     }

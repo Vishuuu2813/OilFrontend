@@ -38,10 +38,10 @@
 //         setLoading(true);
         
 //         // Trigger the handler first to ensure all expired shifts are moved to archive
-//         await axios.get("http://localhost:8000/handle-expired-shifts");
+//         await axios.get("https://oil-backend-maxf.vercel.apphandle-expired-shifts");
         
 //         // Then fetch the archive
-//         const response = await axios.get("http://localhost:8000/expired-shifts-archive");
+//         const response = await axios.get("https://oil-backend-maxf.vercel.appexpired-shifts-archive");
         
 //         if (response.data.status === "success") {
 //           const shiftsData = response.data.data || [];
@@ -141,7 +141,7 @@
 //   // Delete a single expired shift
 //   const deleteExpiredShift = async (id) => {
 //     try {
-//       const response = await axios.delete(`http://localhost:8000/expired-shifts/${id}`);
+//       const response = await axios.delete(`https://oil-backend-maxf.vercel.appexpired-shifts/${id}`);
       
 //       if (response.data.status === "success") {
 //         // Remove the deleted shift from state
@@ -163,7 +163,7 @@
 //   // Clear all expired shifts
 //   const clearAllExpiredShifts = async () => {
 //     try {
-//       const response = await axios.delete("http://localhost:8000/expired-shifts");
+//       const response = await axios.delete("https://oil-backend-maxf.vercel.appexpired-shifts");
       
 //       if (response.data.status === "success") {
 //         setExpiredShifts([]);
@@ -301,8 +301,8 @@
 //             onClick={async () => {
 //               setLoading(true);
 //               try {
-//                 await axios.get("http://localhost:8000/handle-expired-shifts");
-//                 const response = await axios.get("http://localhost:8000/expired-shifts-archive");
+//                 await axios.get("https://oil-backend-maxf.vercel.apphandle-expired-shifts");
+//                 const response = await axios.get("https://oil-backend-maxf.vercel.appexpired-shifts-archive");
 //                 if (response.data.status === "success") {
 //                   setExpiredShifts(response.data.data || []);
 //                   setFilteredShifts(response.data.data || []);

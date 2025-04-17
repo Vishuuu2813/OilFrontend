@@ -42,7 +42,7 @@ const EmploeeRegister = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:8000/register', {
+      const res = await fetch('https://oil-backend-maxf.vercel.appregister', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

@@ -10,7 +10,7 @@ function DepartmnentCategory() {
 
   const fetchCategories = async () => {
     try {
-      const res = await fetch("http://localhost:8000/categories-with-count");
+      const res = await fetch("https://oil-backend-maxf.vercel.appcategories-with-count");
       const data = await res.json();
       if (data.status === "success") {
         setCategories(data.data);
@@ -23,7 +23,7 @@ function DepartmnentCategory() {
   const handleAdd = async () => {
     if (!category.trim()) return;
     try {
-      const res = await fetch("http://localhost:8000/add-category", {
+      const res = await fetch("https://oil-backend-maxf.vercel.appadd-category", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: category }),

@@ -16,7 +16,7 @@ function RechargeManager() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8000/add-recharge-plan', formData);
+      await axios.post('https://oil-backend-maxf.vercel.appadd-recharge-plan', formData);
       alert('Recharge plan created!');
       setFormData({
         planName: '',

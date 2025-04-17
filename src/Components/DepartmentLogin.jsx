@@ -26,7 +26,7 @@ const DepartmentLogin = () => {
     
     try {
       // Make API call to verify credentials
-      const response = await axios.post('http://localhost:8000/department-login', {
+      const response = await axios.post('https://oil-backend-maxf.vercel.appdepartment-login', {
         email,
         password
       });
@@ -42,7 +42,7 @@ const DepartmentLogin = () => {
         // Fetch department details with the new token
         try {
           const departmentResponse = await axios.get(
-            `http://localhost:8000/departments/${departmentId}`,
+            `https://oil-backend-maxf.vercel.appdepartments/${departmentId}`,
             {
               headers: {
                 Authorization: `Bearer ${response.data.token}`

@@ -327,7 +327,7 @@ function UserDetails() {
   const [perPage, setPerPage] = useState(10);
   const [sortField, setSortField] = useState('fullname');
   const [sortDirection, setSortDirection] = useState('asc');
-  const [apiEndpoint, setApiEndpoint] = useState('http://localhost:8000/employees');
+  const [apiEndpoint, setApiEndpoint] = useState('https://oil-backend-maxf.vercel.appemployees');
 
   useEffect(() => {
     fetchEmployees();
@@ -568,7 +568,7 @@ function UserDetails() {
           };
           
           try {
-            const response = await fetch(`http://localhost:8000/update-employee/${row.id}`, {
+            const response = await fetch(`https://oil-backend-maxf.vercel.appupdate-employee/${row.id}`, {
               method: 'PUT',
               headers: {
                 'Content-Type': 'application/json',
@@ -635,7 +635,7 @@ function UserDetails() {
         try {
           // In a real application, make API call to delete employee
           try {
-            const response = await fetch(`http://localhost:8000/delete-employee/${row.id}`, {
+            const response = await fetch(`https://oil-backend-maxf.vercel.appdelete-employee/${row.id}`, {
               method: 'DELETE'
             });
             
@@ -718,7 +718,7 @@ function UserDetails() {
             };
             
             try {
-              const response = await fetch(`http://localhost:8000/unblock-employee/${row.id}`, {
+              const response = await fetch(`https://oil-backend-maxf.vercel.appunblock-employee/${row.id}`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -815,7 +815,7 @@ function UserDetails() {
             };
             
             try {
-              const response = await fetch(`http://localhost:8000/block-employee/${row.id}`, {
+              const response = await fetch(`https://oil-backend-maxf.vercel.appblock-employee/${row.id}`, {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -950,7 +950,7 @@ function UserDetails() {
           };
           
           try {
-            const response = await fetch('http://localhost:8000/create-employee', {
+            const response = await fetch('https://oil-backend-maxf.vercel.appcreate-employee', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',

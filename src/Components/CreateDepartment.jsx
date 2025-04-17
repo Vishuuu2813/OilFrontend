@@ -33,7 +33,7 @@ function CreateDepartment() {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/categories');
+      const res = await axios.get('https://oil-backend-maxf.vercel.appcategories');
       setCategories(res.data.data || []);
     } catch (err) {
       console.error('Error fetching categories:', err);
@@ -43,7 +43,7 @@ function CreateDepartment() {
 
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/departments');
+      const res = await axios.get('https://oil-backend-maxf.vercel.appdepartments');
       setDepartments(res.data.data || []);
     } catch (err) {
       console.error('Error fetching departments:', err);
@@ -67,11 +67,11 @@ function CreateDepartment() {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://localhost:8000/update-department/${editId}`, formData);
+        await axios.put(`https://oil-backend-maxf.vercel.appupdate-department/${editId}`, formData);
         Swal.fire('Success', 'Department updated successfully', 'success');
         setEditId(null);
       } else {
-        await axios.post('http://localhost:8000/add-department', formData);
+        await axios.post('https://oil-backend-maxf.vercel.appadd-department', formData);
         Swal.fire('Success', 'Department created successfully', 'success');
       }
       setFormData({
@@ -138,7 +138,7 @@ function CreateDepartment() {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:8000/delete-department/${id}`);
+        await axios.delete(`https://oil-backend-maxf.vercel.appdelete-department/${id}`);
         Swal.fire('Deleted!', 'The department has been deleted.', 'success');
         fetchDepartments();
       } catch (err) {

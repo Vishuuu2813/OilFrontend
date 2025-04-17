@@ -350,7 +350,7 @@ function CreateUser() {
   const fetchUsers = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get('http://localhost:8000/employees');
+      const res = await axios.get('https://oil-backend-maxf.vercel.appemployees');
       if (res.data.status === 'success') {
         setUsers(res.data.data);
       }
@@ -377,9 +377,9 @@ function CreateUser() {
     try {
       let res;
       if (isEditing) {
-        res = await axios.put(`http://localhost:8000/update-employee/${editingId}`, form);
+        res = await axios.put(`https://oil-backend-maxf.vercel.appupdate-employee/${editingId}`, form);
       } else {
-        res = await axios.post('http://localhost:8000/add-employee', form);
+        res = await axios.post('https://oil-backend-maxf.vercel.appadd-employee', form);
       }
       if (res.data.status === 'success') {
         Swal.fire({
@@ -449,7 +449,7 @@ function CreateUser() {
       if (result.isConfirmed) {
         setIsLoading(true);
         try {
-          const res = await axios.delete(`http://localhost:8000/delete-employee/${id}`);
+          const res = await axios.delete(`https://oil-backend-maxf.vercel.appdelete-employee/${id}`);
           if (res.data.status === 'success') {
             Swal.fire({
               icon: 'success',
@@ -511,7 +511,7 @@ function CreateUser() {
 
     setIsAddingFunds(true);
     try {
-      const res = await axios.post('http://localhost:8000/add-wallet-funds', {
+      const res = await axios.post('https://oil-backend-maxf.vercel.appadd-wallet-funds', {
         userId: selectedUser._id,
         amount: Number(walletAmount)
       });

@@ -321,7 +321,7 @@ function CreateDepartmentMember() {
   const fetchMembers = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.get('http://localhost:8000/department-members');
+      const res = await axios.get('https://oil-backend-maxf.vercel.appdepartment-members');
       if (res.data.status === 'success') {
         setMembers(res.data.data);
       }
@@ -341,7 +341,7 @@ function CreateDepartmentMember() {
   // Fetch departments for dropdown
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/departments');
+      const res = await axios.get('https://oil-backend-maxf.vercel.appdepartments');
       if (res.data.status === 'success') {
         setDepartments(res.data.data);
       }
@@ -368,9 +368,9 @@ function CreateDepartmentMember() {
     try {
       let res;
       if (isEditing) {
-        res = await axios.put(`http://localhost:8000/update-department-member/${editingId}`, form);
+        res = await axios.put(`https://oil-backend-maxf.vercel.appupdate-department-member/${editingId}`, form);
       } else {
-        res = await axios.post('http://localhost:8000/add-department-member', form);
+        res = await axios.post('https://oil-backend-maxf.vercel.appadd-department-member', form);
       }
       if (res.data.status === 'success') {
         Swal.fire({
@@ -449,7 +449,7 @@ function CreateDepartmentMember() {
       if (result.isConfirmed) {
         setIsLoading(true);
         try {
-          const res = await axios.delete(`http://localhost:8000/delete-department-member/${id}`);
+          const res = await axios.delete(`https://oil-backend-maxf.vercel.appdelete-department-member/${id}`);
           if (res.data.status === 'success') {
             Swal.fire({
               icon: 'success',

@@ -5,7 +5,7 @@ function Wallet() {
   const [plans, setPlans] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/recharge-plans')
+    axios.get('https://oil-backend-maxf.vercel.apprecharge-plans')
       .then(res => setPlans(res.data.data || []))
       .catch(err => console.error(err));
   }, []);

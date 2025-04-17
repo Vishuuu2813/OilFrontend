@@ -51,7 +51,7 @@ function Home() {
       }
       
       // Make API call to get the current wallet balance
-      const response = await axios.get(`http://localhost:8000/get-wallet-balance/${storedUserData._id}`, {
+      const response = await axios.get(`https://oil-backend-maxf.vercel.appget-wallet-balance/${storedUserData._id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

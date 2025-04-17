@@ -14,7 +14,7 @@ function NotificationMaker() {
   // Fetch all notifications
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get('http://localhost:8000/api/notifications');
+      const res = await axios.get('https://oil-backend-maxf.vercel.app/notifications');
       setNotifications(res.data.data);
     } catch (err) {
       console.error('Error fetching notifications:', err);
@@ -50,11 +50,11 @@ function NotificationMaker() {
 
     try {
       if (editId) {
-        await axios.put(`http://localhost:8000/api/edit-notification/${editId}`, { title, description });
+        await axios.put(`https://oil-backend-maxf.vercel.app/edit-notification/${editId}`, { title, description });
         Swal.fire('Updated!', 'Notification updated successfully', 'success');
         setEditId(null);
       } else {
-        await axios.post('http://localhost:8000/api/add-notification', { title, description });
+        await axios.post('https://oil-backend-maxf.vercel.app/add-notification', { title, description });
         Swal.fire('Success', 'Notification added successfully', 'success');
       }
 
@@ -77,7 +77,7 @@ function NotificationMaker() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:8000/api/delete-notification/${id}`);
+          await axios.delete(`https://oil-backend-maxf.vercel.app/delete-notification/${id}`);
           Swal.fire('Deleted!', 'Notification deleted.', 'success');
           fetchNotifications();
         } catch (err) {

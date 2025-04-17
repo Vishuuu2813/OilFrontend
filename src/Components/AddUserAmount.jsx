@@ -9,7 +9,7 @@ function AddUserAmount() {
 
   // ✅ Fetch users on mount
   useEffect(() => {
-    axios.get('http://localhost:8000/employees')
+    axios.get('https://oil-backend-maxf.vercel.appemployees')
       .then(res => {
         if (res.data.status === 'success') {
           setUsers(res.data.data);
@@ -32,7 +32,7 @@ function AddUserAmount() {
     }
 
     try {
-      await axios.post('http://localhost:8000/api/add-user-amount', {
+      await axios.post('https://oil-backend-maxf.vercel.app/add-user-amount', {
         userId: selectedUser,
         amount: parseFloat(amount),
       });
